@@ -102,8 +102,11 @@ int main(){
 	qu.enqueue(76);
 	qu.enqueue(67);
 	qu.display();
-	qu.enqueue(100);
+	cout<<endl;
+	cout<<qu.dequeue()<<cout<<endl;
 	cout<<qu.dequeue();
+	cout<<endl;
+	qu.enqueue(32);
 	qu.display();
 	
 	
