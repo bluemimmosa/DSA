@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 class Node{
 	public:
 		int data;
@@ -57,10 +58,6 @@ class LinkedList{
 			return NULL;
 		}
 		
-		void insertionSort(){
-			
-		}
-		
 		void insertAtFront(Node * n){
 			if(head == NULL){
 				head = n;
@@ -69,6 +66,38 @@ class LinkedList{
 				n->next = head;
 				head = n;
 			}
+		}
+		
+		void insertionSort(){
+			Node *cur, *nextCur, *temp;
+			temp = new Node();
+			nextCur = head->next;
+			
+			int i = 0;
+			while(nextCur != NULL){ // 1, 5, 2, 3(i) nextCur
+				cur = head;
+				cout<<endl<<endl;
+				cout<<"nextCur: "<<nextCur->data<<endl;
+				for(int j=0; j<=i; j++){
+					
+					
+					cout<<"i value: "<<i<<endl;
+					cout<<"cur: "<<cur->data<<endl;
+					cout<<"j value: "<<j<<endl<<endl;
+					if(nextCur->data < cur->data){
+						temp->data = nextCur->data;
+						nextCur->data = cur->data;
+						cur->data = temp->data;
+					}
+					cur = cur->next;
+				}
+				i++;
+				nextCur = nextCur->next;
+				
+				this->display();
+				cout<<endl;
+			}
+			
 		}
 		
 		int remove(int num){
